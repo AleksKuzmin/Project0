@@ -24,7 +24,7 @@ $(document).ready(function() {
   $('#checking-deposit').on("click", function () {
     // $deposit = $('#checking-amount').val()
     // $balance= $('#checking-balance').text(Number($deposit) + Number($('#checking-balance').text()))
-    $deposit = Number($('#checking-amount').val())
+    $deposit = + $('#checking-amount').val()
     if ($deposit > 0) {
       $checkingAccount += $deposit
       reflectAccounts();
@@ -44,10 +44,13 @@ $('#checking-withdraw').on("click", function () {
   //$balance = $('#checking-balance').text()
   if ($checkingAccount >= $withdraw ) {
     $checkingAccount -= $withdraw
-  } else if ($checkingAccount + $savingsAccount >= $withdraw) {
+  }
+  else if ($checkingAccount + $savingsAccount >= $withdraw) {
+
     $savingsAccount -= $withdraw - $checkingAccount
     $checkingAccount = 0
-  }
+
+   }
 
   reflectAccounts();
 

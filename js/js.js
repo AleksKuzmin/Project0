@@ -22,23 +22,12 @@ function alternateMove() {
   // }
 }
 
-for (let i =0; board.length; i++) {
-    let rows = board[i];
-    console.log(rows)
 
- }
-// function checkWin () {
-//  for (let i =0; board.length; i++) {
-//    let rows = board[i];
-//
-//  }
-// }
-//  for (let j = 0; j < innerArrayLength; j++) {
-//    if(
-//  }
-//   //// TODO: implement method to check if game has a winner or draw
+function checkWin () {
+}
+  //// TODO: implement method to check if game has a winner or draw
 
-//
+
 
 
 

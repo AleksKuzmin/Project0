@@ -7,7 +7,8 @@ let board = [
   [null,null,null],
   [null,null,null]
 ];
-
+const audio1 = new Audio('sounds/mortal_kombat start.mp3');
+audio1.volume = 0.05;
 
 function playDraw() {
         const audio = new Audio('sounds/laughing.mp3');
@@ -21,16 +22,17 @@ function playFatality() {
       }
 
 function play() {
-        const audio1 = new Audio('sounds/fatality.mp3');
-        audio1.volume = 0.5
-        audio1.play();
+        const audio1 = new Audio('sounds/mortal_kombat start.mp3');
 
+        audio1.play();
+        audio1= audio1.pause()
+        audio1.volume = 0.05
 
       }
 
 
 function restart() {
-play()
+audio1.play();
 
   gameInProgress = true;
   move = "O";

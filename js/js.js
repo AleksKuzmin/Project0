@@ -7,6 +7,8 @@ let board = [
   [null,null,null],
   [null,null,null]
 ];
+
+//audio section
 const audio1 = new Audio('sounds/mortal_kombat start.mp3');
 audio1.volume = 0.05;
 
@@ -30,7 +32,7 @@ function play() {
 
       }
 
-
+//restart section
 function restart() {
 audio1.play();
 
@@ -51,12 +53,15 @@ audio1.play();
   }
   $('#header').html('Current Player: <label id="player">x</label>')
 }
+
+
+//player changes
 function alternateMove() {
   move = move === 'X' ? 'O' : 'X';
   return move
 
 }
-
+// check winner
 function checkWin() {
  let hasMoves = false;
 
@@ -117,7 +122,7 @@ if (!hasMoves && gameInProgress) {
 }
 }
 
-
+// dom manipulation
 $(document).ready(function() {
 
 
@@ -134,7 +139,5 @@ $(document).ready(function() {
         checkWin()
 
       }
-
-
     });
     });

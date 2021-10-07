@@ -1,6 +1,6 @@
 
 
-
+let gameInProgress = true;
 
 let move ="o"
 let board = [
@@ -10,8 +10,39 @@ let board = [
 ];
 
 
+function playDraw() {
+        const audio = new Audio('sounds/laughing.mp3');
+        audio.play();
+        audio.volume = 0.05
+      }
+function playFatality() {
+        const audio = new Audio('sounds/sound.mp3');
+        audio.play();
+        audio.volume = 0.05
+      }
 
+function play() {
+        const audio = new Audio('sounds/mortal_kombat start.mp3');
+        audio.volume = 0.03;
+        audio.play();
+      }
 
+function restart() {
+play()
+
+  gameInProgress = true;
+  move = "o";
+  board = [
+    [null,null,null],
+    [null,null,null],
+    [null,null,null]
+  ];
+
+  for (let i=0; i < 9; i ++) {
+    $(`#${i}`).text('');
+  }
+  $('#header').html('Current Player: <label id="player">x</label>')
+}
 function alternateMove() {
   move = move === 'x' ? 'o' : 'x';
   return move
@@ -22,11 +53,65 @@ function alternateMove() {
   // }
 }
 
+function checkWin() {
+ let hasMoves = false;
 
-function checkWin () {
+for(let i=0; i < board.length; i++) {
+  let comboRow = [];
+  let comboCol = [];
+
+
+  for(let j=0; j <board.length; j++) {
+  if(!board[j][i]) hasMoves = true; // checking if we have empty cells aka null
+  comboCol.push(board[j][i]);
+  comboRow.push(board[i][j]);
+
 }
-  //// TODO: implement method to check if game has a winner or draw
+if(comboCol[0] !== null && new Set(comboCol).size ==1) {
+  gameInProgress = false;
+  $('#header').text(`Player ${comboCol[0]} wins!`)
 
+  $(`#${i}`).addClass('cross--y')
+  $(`#${3+i}`).addClass('cross--y')
+  $(`#${6+i}`).addClass('cross--y')
+  playFatality()
+
+}
+if(comboRow[0] !== null && new Set(comboRow).size == 1) {
+  gameInProgress = false;
+  $('#header').text(`Player ${comboRow[0]} wins`)
+  $(`#${i*3}`).addClass('cross--x')
+  $(`#${i*3+1}`).addClass('cross--x')
+  $(`#${i*3+2}`).addClass('cross--x')
+  playFatality()
+}
+}
+
+//diagonal check
+
+let comboA = [board[0][0], board[1][1], board[2][2]];
+let comboB = [board [0][2], board[1][1], board[2][0]];
+
+if (comboA[0] && new Set(comboA).size == 1) {
+  gameInProgress =false;
+  $('#header').text(`Player ${comboA[0]} wins!`)
+  $(`#4`).addClass('cross--diagonal-a')
+
+  playFatality()
+}
+if (comboB[0] && new Set(comboB).size == 1) {
+  gameInProgress =false;
+  $('#header').text(`Player ${comboB[0]} wins!`)
+  $(`#4`).addClass('cross--diagonal-b')
+
+  playFatality()
+}
+if (!hasMoves && gameInProgress) {
+  gameInProgress = false;
+  $("#header").text ('Draw game')
+  playDraw()
+}
+}
 
 
 
@@ -39,7 +124,7 @@ $(document).ready(function() {
       const cellId = + event.target.id;
 
 
-      const row = Math.trunc( cellId / 3 );
+      const row = Math.trunc( cellId / 3 ); // whole number
       const col = cellId % 3;
 
       if(!board[row][col]) {
@@ -48,101 +133,10 @@ $(document).ready(function() {
         const currentMove = alternateMove();
         board[row][col] = currentMove;
         event.target.innerHTML = currentMove;
-        //heckWin()
+        checkWin()
+
       }
 
-      console.table(board)
-      console.log(row,col)
 
     });
     });
-
-   // const cellID = event.target.id
-   // // select all cells with class 'cells'
-   // //event-eventlistener reacts on click
-   // //target - gets all ID from cells, so we get ID's by simpy clicking a cell.
-   // console.dir(cellID)
-
-
-
-
-  // $('#0').on('click', function () {
-  //   $('#0').text("x")
-  //
-  //
-  //
-  // });
-  //
-  // $('#1').on('click', function () {
-  //   $('#1').text("x")
-  //
-  //
-  // });
-  // $('#2').on('click', function () {
-  // $('#2').text("x")
-  //
-  //
-  // });
-  // $('#3').on('click', function () {
-  //   $('#3').text("x")
-  //
-  // });
-  // $('#4').on('click', function () {
-  //   $('#4').text("x")
-  //
-  // });
-  // $('#5').on('click', function () {
-  //   $('#5').text("x")
-  //
-  // });
-  // $('#6').on('click', function () {
-  //   $('#6').text("x")
-  //
-  // });
-  // $('#7').on('click', function () {
-  //   $('#7').text("x")
-  //
-  // });
-  // $('#8').on('click', function () {
-  //   $('#8').text("x")
-  //
-  // });
-  //
-
-
-// $(document).ready(function() {
-// $('#11').on('click', function (){
-//   $('#11').addClass('cross');
-// });
-//
-// $('#12').on('click', function () {
-//   $('#12').addClass('cross');
-// });
-// $('#13').on('click', function () {
-//   $('#13').addClass('cross');
-// });
-// $('#21').on('click', function () {
-//   $('#21').addClass('cross');
-// });
-// $('#22').on('click', function () {
-//   $('#22').addClass('cross');
-// });
-// $('#23').on('click', function () {
-//   $('#23').addClass('cross');
-// });
-// $('#31').on('click', function () {
-//   $('#31').addClass('cross');
-// });
-// $('#32').on('click', function () {
-//   $('#32').addClass('cross');
-// });
-//
-// $('#33').on('click', function () {
-//   $('#33').addClass('cross');
-// });
-//
-// });
-// Use your Development Tools (console.log, inspector, alert statements, etc) to debug and solve problems
-// Work through the lessons in class, ask questions and come to office hours when you need to. Think about adding relevant code to your Tic Tac Toe game each night, instead of, you know... procrastinating.
-// Commit early, commit often. Don’t be afraid to break something because you can always go back in time to a previous version.
-// Check out Tutorial and Documentation resources (jQuery tutorial) at home to better understand what you’ll be getting into.

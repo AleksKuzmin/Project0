@@ -1,60 +1,116 @@
-
-/* * { border: 1px solid limegreen; } */
-
+/*
+* { border: 1px solid limegreen; } */
+@import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
 
 body {
+  background-image: url("../images/mortalcombat.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #222;
   padding: 0;
   font-family: 'Cairo', sans-serif;
+
+
 }
 
+h3 {
+  align-self: center;
+}
 #container {
-  margin: 0 auto;
-  text-align: center;
-  width: 960px;
-}
-td {
-	border:  2px solid #333;
-	height:  100px;
-	width:  100px;
-	text-align:  center;
-	vertical-align:  middle;
-	font-family:  "Comic Sans MS", cursive, sans-serif;
-	font-size:  70px;
-	cursor: pointer;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-table {
-	border-collapse: collapse;
-	position: absolute;
-	left: 50%;
-	margin-left: -155px;
-	top: 50px;
-}
+.board {
+    margin-top: 334px;
+    display: grid;
+    align-self: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width:  21rem;
+    height: 21rem;
+    border: 1px solid gold;
+  }
+.cell {
+    font-family:  "Akronim", cursive, sans-serif;
+    display: block;
+    border-style: none;
+    /* border: 1px solid gold; */
+    text-align: center;
+    color: black;
+    font-size: 7.5rem;
+    height: 7rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.1s ease-in-out;
 
-table tr:first-child td {
-	border-top: 0;
-}
+    }
+.cell:hover{
+      background: rgb(68, 68, 68);
+      opacity: 0.2;
+    }
+#restart{
+        font-family:  "Akronim", cursive, sans-serif;
+        align-self: center;
+        width: 15rem;
+        height: 3rem;
+        margin-top: 8rem;
+        background-color: blue;
+        border-radius: 30%;
+        font-size: 2rem;
+        font-weight: bold;
+        color: black;
+        border: 1px solid #ffffff5e;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.3;
+    }
+#restart:hover{
+      background-color: #0de7a6;
 
-table tr:last-child td {
-	border-bottom: 0;
-}
+    }
+#restart:active{
+  transition: unset;
+      background-color: grey;
 
-table tr td:first-child {
-	border-left: 0;
-}
-
-table tr td:last-child {
-	border-right: 0;
-}
-
-
-}
-.cross {
-  background-color: #F52F4F;
-  color: #FFF;
-}
-.null {
-  background-color: #00FF00;
-  color: #FFF;
-}
+    }
+    .cross--x::before{
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: #00d0ff;;
+      width: 7rem;
+      height: 8px;
+      margin-top: 3rem;
+    }
+    .cross--y::before{
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: #00d0ff;;
+      width: 8px;
+      height: 7rem;
+      margin-left: 3.5rem;
+    }
+    .cross--diagonal-a::before{
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: #00d0ff;;
+      width: 29rem;
+      height: 8px;
+      margin-left: -11rem;
+      margin-top: 3.2rem;
+      transform: rotate(45deg);
+    }
+    .cross--diagonal-b::before{
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: #00d0ff;;
+      width: 29rem;
+      height: 8px;
+      margin-left: -11rem;
+      margin-top: 3.2rem;
+      transform: rotate(-45deg);
+    }

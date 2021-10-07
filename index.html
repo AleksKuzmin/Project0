@@ -15,24 +15,23 @@
 <body>
 <div id="container">
 
-<h3>Current player: <label id="player">x</label></h3>
-  <table id="tableboard">
-		<tr>
-			<td class="cell" id="0"></td>
-			<td class="cell" id="1"></td>
-			<td class="cell" id="2"></td>
-		</tr>
-		<tr>
-			<td class="cell" id="3"></td>
-			<td class="cell" id="4"></td>
-			<td class="cell" id="5"></td>
-		</tr>
-		<tr>
-			<td class="cell" id="6"></td>
-			<td class="cell" id="7"></td>
-			<td class="cell" id="8"></td>
-		</tr>
-	</table>
+<h3 id="header">Current player: <label id="player">x</label></h3>
+<div class="board">
+  <div id="0" class="cell"></div>
+  <div id="1" class="cell"></div>
+  <div id="2" class="cell"></div>
+  <div id="3" class="cell"></div>
+  <div id="4" class="cell"></div>
+  <div id="5" class="cell"></div>
+  <div id="6" class="cell"></div>
+  <div id="7" class="cell"></div>
+  <div id="8" class="cell"></div>
+</div>
+
+
+
+  <button id="restart" onclick="restart();audio.pause()" >Start again </button>
+
 
 
 

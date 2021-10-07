@@ -10,36 +10,38 @@ body {
   padding: 0;
   font-family: 'Cairo', sans-serif;
 
-
 }
-
+h1{
+  font-size: 100px;
+  text-align: center;
+}
 h3 {
+  font-size: 50px;
   align-self: center;
 }
 #container {
-  height: 100vh;
+  max-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
 .board {
-    margin-top: 334px;
+    margin-top: 150px;
     display: grid;
     align-self: center;
     grid-template-columns: 1fr 1fr 1fr;
     width:  21rem;
     height: 21rem;
-    border: 1px solid gold;
+
   }
 .cell {
     font-family:  "Akronim", cursive, sans-serif;
     display: block;
-    border-style: none;
-    /* border: 1px solid gold; */
+    border: 1px solid black;
     text-align: center;
     color: black;
-    font-size: 7.5rem;
+    font-size: 9rem;
     height: 7rem;
     cursor: pointer;
     user-select: none;
@@ -55,13 +57,13 @@ h3 {
         align-self: center;
         width: 15rem;
         height: 3rem;
-        margin-top: 8rem;
+        margin-top: 15rem;
         background-color: blue;
         border-radius: 30%;
         font-size: 2rem;
         font-weight: bold;
         color: black;
-        border: 1px solid #ffffff5e;
+        border: 5px solid #ffffff5e;
         transition: all 0.3s ease-in-out;
         opacity: 0.3;
     }
@@ -78,7 +80,7 @@ h3 {
       position: absolute;
       display: block;
       content: "";
-      background-color: #00d0ff;;
+      background-color: red;
       width: 7rem;
       height: 8px;
       margin-top: 3rem;
@@ -87,7 +89,7 @@ h3 {
       position: absolute;
       display: block;
       content: "";
-      background-color: #00d0ff;;
+      background-color: red;
       width: 8px;
       height: 7rem;
       margin-left: 3.5rem;
@@ -96,7 +98,7 @@ h3 {
       position: absolute;
       display: block;
       content: "";
-      background-color: #00d0ff;;
+      background-color: red;
       width: 29rem;
       height: 8px;
       margin-left: -11rem;
@@ -107,7 +109,7 @@ h3 {
       position: absolute;
       display: block;
       content: "";
-      background-color: #00d0ff;;
+      background-color: red;
       width: 29rem;
       height: 8px;
       margin-left: -11rem;

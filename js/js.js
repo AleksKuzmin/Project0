@@ -1,8 +1,7 @@
 
-
 let gameInProgress = true;
 
-let move ="o"
+let move ="O"
 let board = [
   [null,null,null],
   [null,null,null],
@@ -13,25 +12,28 @@ let board = [
 function playDraw() {
         const audio = new Audio('sounds/laughing.mp3');
         audio.play();
-        audio.volume = 0.05
+        audio.volume = 0.5
       }
 function playFatality() {
         const audio = new Audio('sounds/sound.mp3');
         audio.play();
-        audio.volume = 0.05
+        audio.volume = 0.5
       }
 
 function play() {
-        const audio = new Audio('sounds/mortal_kombat start.mp3');
-        audio.volume = 0.03;
-        audio.play();
+        const audio1 = new Audio('sounds/fatality.mp3');
+        audio1.volume = 0.5
+        audio1.play();
+
+
       }
+
 
 function restart() {
 play()
 
   gameInProgress = true;
-  move = "o";
+  move = "O";
   board = [
     [null,null,null],
     [null,null,null],
@@ -40,17 +42,17 @@ play()
 
   for (let i=0; i < 9; i ++) {
     $(`#${i}`).text('');
+    $(`#${i}`).removeClass('cross--y')
+    $(`#${i}`).removeClass('cross--x')
+    $(`#${i}`).removeClass('cross--diagonal-a')
+    $(`#${i}`).removeClass('cross--diagonal-b')
   }
   $('#header').html('Current Player: <label id="player">x</label>')
 }
 function alternateMove() {
-  move = move === 'x' ? 'o' : 'x';
+  move = move === 'X' ? 'O' : 'X';
   return move
-  // if(move === 'x') {
-  //   move = 'o'
-  // }else {
-  //   move = 'x'
-  // }
+
 }
 
 function checkWin() {
@@ -108,13 +110,10 @@ if (comboB[0] && new Set(comboB).size == 1) {
 }
 if (!hasMoves && gameInProgress) {
   gameInProgress = false;
-  $("#header").text ('Draw game')
+  $("#header").text ('Draw game!')
   playDraw()
 }
 }
-
-
-
 
 
 $(document).ready(function() {
@@ -122,11 +121,8 @@ $(document).ready(function() {
 
  $('.cell').on('click',function(event) {
       const cellId = + event.target.id;
-
-
       const row = Math.trunc( cellId / 3 ); // whole number
       const col = cellId % 3;
-
       if(!board[row][col]) {
         // null ===false if "!" means 'true'
         $('#player').text(move)

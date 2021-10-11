@@ -13,7 +13,7 @@ Html, Css, javascript, Jquery
 When you press on a cell, javascript turns the ID of the cell into a row an a stroke which are saved into the array. Array is basically a matrix.
 All calculation is based on matrix.
 
-## Css
+## CSS
 Crossing line appears on screen when there are 3 Id's  in row, stroke or diagonal line.
 
 

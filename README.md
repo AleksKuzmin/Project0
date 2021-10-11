@@ -6,7 +6,7 @@ X always goes first. If a player is able to draw three X or three O in a row, th
 
 ## Used technologies
 
-Html, Css, javascript, Jquery
+Html, CSS, javascript, jQuery
 
 ## How it works
 

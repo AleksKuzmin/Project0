@@ -6,14 +6,14 @@ X always goes first. If a player is able to draw three X or three O in a row, th
 
 ## Used technologies
 
-Html, Css, javascript, Jquery
+Html, CSS, javascript, jQuery
 
 ## How it works
 
 When you press on a cell, javascript turns the ID of the cell into a row an a stroke which are saved into the array. Array is basically a matrix.
 All calculation is based on matrix.
 
-## Css
+## CSS
 Crossing line appears on screen when there are 3 Id's  in row, stroke or diagonal line.
 
 

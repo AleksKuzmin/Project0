@@ -27,74 +27,73 @@ h3 {
 }
 
 .board {
-    margin-top: 150px;
-    display: grid;
-    align-self: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    width:  21rem;
-    height: 21rem;
+  margin-top: 150px;
+  display: grid;
+  align-self: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  width:  21rem;
+  height: 21rem;
+  }
+
+.cell {
+  font-family:  "Akronim", cursive, sans-serif;
+  display: block;
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+  font-size: 9rem;
+  height: 7rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s ease-in-out;
+  }
+
+.cell:hover{
+  background: rgb(68, 68, 68);
+  opacity: 0.2;
+}
+#restart{
+  font-family:  "Akronim", cursive, sans-serif;
+  align-self: center;
+  width: 15rem;
+  height: 3rem;
+  margin-top: 15rem;
+  background-color: blue;
+  border-radius: 30%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  border: 5px solid #ffffff5e;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.3;
+}
+#restart:hover{
+    background-color: #0de7a6;
 
   }
-.cell {
-    font-family:  "Akronim", cursive, sans-serif;
-    display: block;
-    border: 1px solid black;
-    text-align: center;
-    color: black;
-    font-size: 9rem;
-    height: 7rem;
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.1s ease-in-out;
-
-    }
-.cell:hover{
-      background: rgb(68, 68, 68);
-      opacity: 0.2;
-    }
-#restart{
-        font-family:  "Akronim", cursive, sans-serif;
-        align-self: center;
-        width: 15rem;
-        height: 3rem;
-        margin-top: 15rem;
-        background-color: blue;
-        border-radius: 30%;
-        font-size: 2rem;
-        font-weight: bold;
-        color: black;
-        border: 5px solid #ffffff5e;
-        transition: all 0.3s ease-in-out;
-        opacity: 0.3;
-    }
-#restart:hover{
-      background-color: #0de7a6;
-
-    }
 #restart:active{
   transition: unset;
       background-color: grey;
 
     }
-    .cross--x::before, .cross--y::before {
-      position: absolute;
-      display: block;
-      content: "";
-      background-color: red;
-      width: 7rem;
-      height: 8px;
-      margin-top: 3rem;
-    }
+.cross--x::before, .cross--y::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: red;
+  width: 7rem;
+  height: 8px;
+  margin-top: 3rem;
+  }
 
-    .cross--diagonal-a::before, .cross--diagonal-b::before{
-      position: absolute;
-      display: block;
-      content: "";
-      background-color: red;
-      width: 29rem;
-      height: 8px;
-      margin-left: -11rem;
-      margin-top: 3.2rem;
-      transform: rotate(45deg);
-    }
-  
+.cross--diagonal-a::before, .cross--diagonal-b::before{
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: red;
+  width: 29rem;
+  height: 8px;
+  margin-left: -11rem;
+  margin-top: 3.2rem;
+  transform: rotate(45deg);
+}

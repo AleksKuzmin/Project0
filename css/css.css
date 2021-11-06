@@ -123,12 +123,17 @@ h3 {
 
 @media screen and (min-width: 480px) {
 
-
   h1 {
-    font-size: 25px;
+    font-size: 40px;
   }
   h3 {
     font-size: 15px
+  }
+  #restart {
+    margin-top: 3rem;
+  }
+  .board {
+    margin-top: 50px;
   }
 
 }

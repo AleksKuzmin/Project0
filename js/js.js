@@ -10,7 +10,7 @@ let board = [
 
 //audio section
 const audio1 = new Audio('sounds/mortal_kombat start.mp3');
-audio1.volume = 0.05;
+audio1.volume = 0.03;
 
 function playDraw() {
         const audio = new Audio('sounds/laughing.mp3');

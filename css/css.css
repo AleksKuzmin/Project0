@@ -11,6 +11,7 @@ body {
   font-family: 'Cairo', sans-serif;
 
 }
+
 h1{
   font-size: 100px;
   text-align: center;
@@ -33,7 +34,7 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr;
   width:  21rem;
   height: 21rem;
-  }
+}
 
 .cell {
   font-family:  "Akronim", cursive, sans-serif;
@@ -46,12 +47,13 @@ h3 {
   cursor: pointer;
   user-select: none;
   transition: all 0.1s ease-in-out;
-  }
+}
 
 .cell:hover{
   background: rgb(68, 68, 68);
   opacity: 0.2;
 }
+
 #restart{
   font-family:  "Akronim", cursive, sans-serif;
   align-self: center;
@@ -68,14 +70,16 @@ h3 {
   opacity: 0.3;
 }
 #restart:hover{
-    background-color: #0de7a6;
+  background-color: #0de7a6;
 
-  }
+}
+
 #restart:active{
   transition: unset;
-      background-color: grey;
+  background-color: grey;
 
-    }
+}
+
 .cross--x::before, .cross--y::before {
   position: absolute;
   display: block;
@@ -84,7 +88,7 @@ h3 {
   width: 7rem;
   height: 8px;
   margin-top: 3rem;
-  }
+}
 
 .cross--diagonal-a::before, .cross--diagonal-b::before{
   position: absolute;

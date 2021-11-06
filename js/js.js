@@ -15,13 +15,13 @@ audio1.volume = 0.02;
 function playDraw() {
   const audio = new Audio('sounds/laughing.mp3');
   audio.play();
-  audio.volume = 0.4
+  audio.volume = 0.3
 }
 
 function playFatality() {
   const audio = new Audio('sounds/sound.mp3');
   audio.play();
-  audio.volume = 0.4
+  audio.volume = 0.3
 }
 
 function play() {
@@ -29,7 +29,7 @@ function play() {
 
   audio1.play();
   audio1= audio1.pause()
-  audio1.volume = 0.04
+  audio1.volume = 0.03
 
 }
 

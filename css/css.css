@@ -76,7 +76,7 @@ h3 {
       background-color: grey;
 
     }
-    .cross--x::before{
+    .cross--x::before, .cross--y::before {
       position: absolute;
       display: block;
       content: "";
@@ -85,16 +85,8 @@ h3 {
       height: 8px;
       margin-top: 3rem;
     }
-    .cross--y::before{
-      position: absolute;
-      display: block;
-      content: "";
-      background-color: red;
-      width: 8px;
-      height: 7rem;
-      margin-left: 3.5rem;
-    }
-    .cross--diagonal-a::before{
+
+    .cross--diagonal-a::before, .cross--diagonal-b::before{
       position: absolute;
       display: block;
       content: "";
@@ -105,14 +97,4 @@ h3 {
       margin-top: 3.2rem;
       transform: rotate(45deg);
     }
-    .cross--diagonal-b::before{
-      position: absolute;
-      display: block;
-      content: "";
-      background-color: red;
-      width: 29rem;
-      height: 8px;
-      margin-left: -11rem;
-      margin-top: 3.2rem;
-      transform: rotate(-45deg);
-    }
+  

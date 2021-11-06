@@ -1,6 +1,6 @@
-#TicTacToe Combat
+# TicTacToe Combat
 
-##Rules
+## Rules
 X always goes first. If a player is able to draw three X or three O in a row, that player wins. If all nine squares are filled and neither player has three in a row, the game is a draw.
 
 
@@ -23,7 +23,7 @@ I used different _Audio() functions_ to use different sounds for wins, draw and 
 
 
 
-##LINK
+## LINK
 
 
 Here is the [TicTacToe Combat](https://alekskuzmin.github.io/Project0/)

@@ -9,6 +9,7 @@ body {
   background-color: #222;
   padding: 0;
   font-family: 'Cairo', sans-serif;
+  max-height: 100vh;
 
 }
 
@@ -21,7 +22,6 @@ h3 {
   align-self: center;
 }
 #container {
-  max-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -100,4 +100,10 @@ h3 {
   margin-left: -11rem;
   margin-top: 3.2rem;
   transform: rotate(45deg);
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
 }

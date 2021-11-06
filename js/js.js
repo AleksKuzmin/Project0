@@ -10,31 +10,31 @@ let board = [
 
 //audio section
 const audio1 = new Audio('sounds/mortal_kombat start.mp3');
-audio1.volume = 0.03;
+audio1.volume = 0.01;
 
 function playDraw() {
-        const audio = new Audio('sounds/laughing.mp3');
-        audio.play();
-        audio.volume = 0.5
-      }
+  const audio = new Audio('sounds/laughing.mp3');
+  audio.play();
+  audio.volume = 0.5
+}
 function playFatality() {
-        const audio = new Audio('sounds/sound.mp3');
-        audio.play();
-        audio.volume = 0.5
-      }
+  const audio = new Audio('sounds/sound.mp3');
+  audio.play();
+  audio.volume = 0.5
+}
 
 function play() {
-        const audio1 = new Audio('sounds/mortal_kombat start.mp3');
+  const audio1 = new Audio('sounds/mortal_kombat start.mp3');
 
-        audio1.play();
-        audio1= audio1.pause()
-        audio1.volume = 0.05
+  audio1.play();
+  audio1= audio1.pause()
+  audio1.volume = 0.05
 
-      }
+}
 
 //restart section
 function restart() {
-audio1.play();
+  audio1.play();
 
   gameInProgress = true;
   move = "O";
@@ -63,7 +63,7 @@ function alternateMove() {
 }
 // check winner
 function checkWin() {
- let hasMoves = false;
+  let hasMoves = false;
 
 for(let i=0; i < board.length; i++) {
   let comboRow = [];
@@ -71,11 +71,11 @@ for(let i=0; i < board.length; i++) {
 
 
   for(let j=0; j <board.length; j++) {
-  if(!board[j][i]) hasMoves = true; // checking if we have empty cells aka null
-  comboCol.push(board[j][i]);
-  comboRow.push(board[i][j]);
+    if(!board[j][i]) hasMoves = true; // checking if we have empty cells aka null
+    comboCol.push(board[j][i]);
+    comboRow.push(board[i][j]);
 
-}
+};
 if(comboCol[0] !== null && new Set(comboCol).size ==1) {
   gameInProgress = false;
   $('#header').text(`Player ${comboCol[0]} wins!`)
@@ -127,16 +127,16 @@ $(document).ready(function() {
 
 
  $('.cell').on('click',function(event) {
-      const cellId = + event.target.id;
-      const row = Math.trunc( cellId / 3 ); // whole number
-      const col = cellId % 3;
-      if(!board[row][col]) {
-        // null ===false if "!" means 'true'
-        $('#player').text(move)
-        const currentMove = alternateMove();
-        board[row][col] = currentMove;
-        event.target.innerHTML = currentMove;
-        checkWin()
+    const cellId = + event.target.id;
+    const row = Math.trunc( cellId / 3 ); // whole number
+    const col = cellId % 3;
+    if(!board[row][col]) {
+      // null ===false if "!" means 'true'
+      $('#player').text(move)
+      const currentMove = alternateMove();
+      board[row][col] = currentMove;
+      event.target.innerHTML = currentMove;
+      checkWin()
 
       }
     });

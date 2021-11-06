@@ -84,7 +84,7 @@ h3 {
   position: absolute;
   display: block;
   content: "";
-  background-color: #00d0ff;
+  background-color: #FF0000;
   width: 7rem;
   height: 8px;
   margin-top: 3rem;
@@ -93,7 +93,7 @@ h3 {
   position: absolute;
   display: block;
   content: "";
-  background-color: #00d0ff;
+  background-color: #FF0000;
   width: 8px;
   height: 7rem;
   margin-left: 3.5rem;
@@ -102,7 +102,7 @@ h3 {
   position: absolute;
   display: block;
   content: "";
-  background-color: #00d0ff;
+  background-color: #FF0000;
   width: 29rem;
   height: 8px;
   margin-left: -11rem;
@@ -113,7 +113,7 @@ h3 {
   position: absolute;
   display: block;
   content: "";
-  background-color: #00d0ff;
+  background-color: #FF0000;
   width: 29rem;
   height: 8px;
   margin-left: -11rem;
@@ -121,7 +121,7 @@ h3 {
   transform: rotate(-45deg);
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 400px) {
 
   h1 {
     font-size: 40px;

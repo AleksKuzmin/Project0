@@ -123,9 +123,7 @@ h3 {
 
 @media screen and (min-width: 480px) {
 
-  body {
-    background-color: DD5065;
-  }
+
   h1 {
     font-size: 25px;
   }

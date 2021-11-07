@@ -135,14 +135,14 @@ h3 {
     margin-top: 70px;
   }
   h3 {
-    font-size: 25px
-
+    font-size: 25px;
+    margin-top: 20px;
   }
   #restart {
     margin-top: 3rem;
   }
   .board {
-    margin-top: 40px;
+    margin-top: 5px;
   }
 
 }

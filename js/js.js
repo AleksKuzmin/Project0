@@ -23,6 +23,7 @@ function gameEnds() {
   audio.play();
   audio.volume = 0.3
    $('.cell').off();
+
 }
 
 function play() {

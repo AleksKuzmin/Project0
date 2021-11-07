@@ -3,10 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
 
 body {
-  background-image: url("../images/mortalcombat.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #222;
+  background: black url("../images/mortalcombat.jpeg") no-repeat scroll 50% 20%;
+  /* background-image: url("../images/mortalcombat.jpeg");
+  background-repeat: no-repeat; */
+
+  /* background-size: cover;
+  background-color: #222; */
   padding: 0;
   font-family: 'Cairo', sans-serif;
   min-height: 100vh;
@@ -122,7 +124,12 @@ h3 {
 }
 
 @media screen and (max-width: 750px) {
-
+  body {
+    background-image: url("../images/mortalcombat.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #222;
+  }
   h1 {
     font-size: 40px;
   }
@@ -133,7 +140,7 @@ h3 {
     margin-top: 3rem;
   }
   .board {
-    margin-top: 50px;
+    margin-top: 5px;
   }
 
 }

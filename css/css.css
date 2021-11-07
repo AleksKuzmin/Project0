@@ -53,7 +53,7 @@ h3 {
 
 .cell:hover{
   background: rgb(68, 68, 68);
-  opacity: 0.;
+  opacity: 0.1;
 }
 
 #restart{
@@ -145,8 +145,5 @@ h3 {
     margin-top: 5px;
   }
 
-  .cell:hover{
-    background: rgb(68, 68, 68);
-    
-  }
+
 }

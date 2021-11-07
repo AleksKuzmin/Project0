@@ -18,10 +18,11 @@ function playDraw() {
   audio.volume = 0.3
 }
 
-function playFatality() {
+function gameEnds() {
   const audio = new Audio('sounds/sound.mp3');
   audio.play();
   audio.volume = 0.3
+   $('.cell').off();
 }
 
 function play() {
@@ -35,8 +36,8 @@ function play() {
 
 //restart section
 function restart() {
+  setUpEvenListeners()
   audio1.play();
-
   gameInProgress = true;
   move = "O";
   board = [
@@ -84,7 +85,7 @@ if(comboCol[0] !== null && new Set(comboCol).size ==1) {
   $(`#${i}`).addClass('cross--y')
   $(`#${3+i}`).addClass('cross--y')
   $(`#${6+i}`).addClass('cross--y')
-  playFatality()
+  gameEnds()
 
 }
 if(comboRow[0] !== null && new Set(comboRow).size == 1) {
@@ -93,7 +94,7 @@ if(comboRow[0] !== null && new Set(comboRow).size == 1) {
   $(`#${i*3}`).addClass('cross--x')
   $(`#${i*3+1}`).addClass('cross--x')
   $(`#${i*3+2}`).addClass('cross--x')
-  playFatality()
+  gameEnds()
 }
 }
 
@@ -107,14 +108,14 @@ if (comboA[0] && new Set(comboA).size == 1) {
   $('#header').text(`Player ${comboA[0]} wins!`)
   $(`#4`).addClass('cross--diagonal-a')
 
-  playFatality()
+  gameEnds()
 }
 if (comboB[0] && new Set(comboB).size == 1) {
   gameInProgress =false;
   $('#header').text(`Player ${comboB[0]} wins!`)
   $(`#4`).addClass('cross--diagonal-b')
 
-  playFatality()
+  gameEnds()
 }
 if (!hasMoves && gameInProgress) {
   gameInProgress = false;
@@ -123,22 +124,25 @@ if (!hasMoves && gameInProgress) {
 }
 }
 
+function setUpEvenListeners() {
+  $('.cell').on('click',function(event) {
+     const cellId = + event.target.id;
+     const row = Math.trunc( cellId / 3 ); // whole number
+     const col = cellId % 3;
+     if(!board[row][col]) {
+       // null ===false if "!" means 'true'
+       $('#player').text(move)
+       const currentMove = alternateMove();
+       board[row][col] = currentMove;
+       event.target.innerHTML = currentMove;
+       checkWin()
+
+       }
+     });
+}
+
+
 // dom manipulation
 $(document).ready(function() {
-
-
- $('.cell').on('click',function(event) {
-    const cellId = + event.target.id;
-    const row = Math.trunc( cellId / 3 ); // whole number
-    const col = cellId % 3;
-    if(!board[row][col]) {
-      // null ===false if "!" means 'true'
-      $('#player').text(move)
-      const currentMove = alternateMove();
-      board[row][col] = currentMove;
-      event.target.innerHTML = currentMove;
-      checkWin()
-
-      }
-    });
-    });
+ setUpEvenListeners()
+});

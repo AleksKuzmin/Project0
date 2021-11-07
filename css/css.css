@@ -121,7 +121,7 @@ h3 {
   transform: rotate(-45deg);
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 750px) {
 
   h1 {
     font-size: 40px;
